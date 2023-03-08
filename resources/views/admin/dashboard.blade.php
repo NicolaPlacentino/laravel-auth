@@ -61,6 +61,13 @@
 
 @section('scripts')
     <script>
-      
+      const deleteForms = document.querySelectorAll('.delete-form');
+      deleteForms.forEach(form => {
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const hasConfirmed = confirm('Il progetto sarà cancellato definitivamente, sei sicuro di volerlo eliminare?');
+          if(hasConfirmed) form.submit();
+        })
+      })
     </script>
 @endsection
