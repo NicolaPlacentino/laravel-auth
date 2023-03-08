@@ -3,7 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col p-5">
+      <div class="col p-5">
+          @if (session('created-allert'))
+                <div class="alert alert-success" role="alert">
+                  {{session('created-allert')}}
+                </div>
+          @endif
             <table class="table">
                 <thead>
                   <tr>
@@ -29,7 +34,7 @@
             <div class="text-end">
                 <a href="{{route('admin.projects.create')}}" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
             </div>
-        </div>
+      </div>
     </div>
 </div>
 @endsection
